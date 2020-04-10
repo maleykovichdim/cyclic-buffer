@@ -98,8 +98,11 @@ Ring<T>& Ring<T>::operator=(const Ring<T>& a) noexcept {
 
 template <typename T>
 Ring<T>::~Ring() {
-	if (m_buffer)
+	if (m_buffer){
 		delete[] m_buffer;
+		m_buffer =nullptr;
+		capacity = 0;
+	}
 };
 
 
